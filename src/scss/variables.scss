@@ -1,0 +1,8 @@
+
+$sides: ('':'', 't':'-top', 'b':'-bottom', 's':'-left', 'e':'-right');
+$sizes: ('':'0.5em', '1':'1em', '2':'2em');
+
+$small: '766px';
+$medium: '1024px';
+$large: '1980px';
+$breakpoints: ('s':$small, 'm':$medium, 'l':$large);
