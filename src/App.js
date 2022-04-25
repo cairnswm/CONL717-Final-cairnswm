@@ -1,7 +1,7 @@
 import "./scss/main.scss";
 import Search from "./pages/search"
 import Header from "./components/parts/header"
-import Router, { useParams } from "./components/router/router";
+import Router from "./components/router/router";
 import About from "./pages/about"
 import Favorites from "./pages/favorites";
 import MovieDetail from "./pages/moviedetails";
