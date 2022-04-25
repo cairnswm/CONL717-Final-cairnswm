@@ -3,7 +3,7 @@ const About = () => {
       <div>
     <div className="row mb2">
       <div className="col">
-        <img src="./logo192.png" alt="logo" />
+        <img src={"logo192.png"} alt="logo" />
       </div>
       <div className="col-3">
         <h1>The Movie Database</h1>

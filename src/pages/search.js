@@ -18,7 +18,7 @@ const Search = () => {
     getGenres,
     page,
     maxPages,
-    loading, setLoading,
+    loading, 
   } = useContext(MovieContext);
   return (
     <Page>

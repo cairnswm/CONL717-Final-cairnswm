@@ -58,7 +58,7 @@ const MovieDetail = () => {
               </div>
               <div className="tab">
                 <button
-                  className="tablinks"
+                  className={`tablinks ${tab==="Videos" ? "active" : null}`}
                   onClick={() => {
                     setTab("Videos");
                   }}
@@ -66,7 +66,7 @@ const MovieDetail = () => {
                   Videos
                 </button>
                 <button
-                  className="tablinks"
+                  className={`tablinks ${tab==="Cast" ? "active" : null}`}
                   onClick={() => {
                     setTab("Cast");
                   }}
@@ -74,7 +74,7 @@ const MovieDetail = () => {
                   Cast
                 </button>
                 <button
-                  className="tablinks"
+                  className={`tablinks ${tab==="Crew" ? "active" : null}`}
                   onClick={() => {
                     setTab("Crew");
                   }}
@@ -82,7 +82,7 @@ const MovieDetail = () => {
                   Crew
                 </button>
                 <button
-                  className="tablinks"
+                  className={`tablinks ${tab==="Images" ? "active" : null}`}
                   onClick={() => {
                     setTab("Images");
                   }}
