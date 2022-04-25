@@ -19,7 +19,6 @@ function App() {
           <Router.To href="favorites" params="id=5">Favorites</Router.To>
           <Router.To href="search" params="id=1">Search</Router.To>
           <Router.To href="about" params="id=15">About</Router.To>
-          <Router.To href="contact">Contact</Router.To>
         </Router.Menu>
 
       <div className="content">

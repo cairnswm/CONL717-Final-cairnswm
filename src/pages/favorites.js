@@ -14,7 +14,7 @@ const Favorites = () => {
           <h2>Favorites</h2>
         </div>
 
-        <div className="col-1">
+        <div className="col-1 mt">
           <span
             onClick={() => {
               setGridView(true);

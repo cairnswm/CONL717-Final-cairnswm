@@ -21,6 +21,11 @@ const SearchBar = ({ className, onSearch }) => {
           onChange={(ev) => {
             setValue(ev.target.value);
           }}
+          onKeyDown={(ev) => {
+            if (ev.key === "Enter") {
+              doSearch(ev);
+            }
+          }}
         />
         <button className="search_button btn btn-primary" onClick={doSearch}>
           Search

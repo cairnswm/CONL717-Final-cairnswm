@@ -11,6 +11,7 @@ export const MovieProvider = ({ children }) => {
   const [page, setPage] = useState(1);
   const [maxPages, setMaxPages] = useState(1);
   const [searchValue, setSearchValue] = useState("");
+  const [loading, setLoading] = useState(false);
   const [activeMovie, setActiveMovie] = useState()
   const [activeMovieCrew, setActiveMovieCrew] = useState([])
   const [activeMovieCast, setActiveMovieCast] = useState([])
@@ -379,6 +380,7 @@ export const MovieProvider = ({ children }) => {
   useEffect(() => {
     let fav = JSON.parse(localStorage.getItem("favorites") || "[]");
     setFavorites(fav);
+    setMovies(fav);
     loadGenres();
   }, []);
 
@@ -397,6 +399,7 @@ export const MovieProvider = ({ children }) => {
     if (page < 1) { page = 1 }
     if (page > maxPages) { page = maxPages }
     setPage(page);
+    setLoading(true);
     console.log("setPage(page);",page);
     let url = `https://api.themoviedb.org/3/search/movie?api_key=${apikey}&language=en-US&append_to_response=videos&query=${searchValue}&page=${page}&include_adult=false`;
     console.log("URL",url)
@@ -412,6 +415,10 @@ export const MovieProvider = ({ children }) => {
           list.push(movie);
         });
         setMovies(list);
+        setLoading(false);
+      })
+      .catch(() => {
+        setLoading(false);
       });
   }
 
@@ -488,7 +495,7 @@ export const MovieProvider = ({ children }) => {
   return (
     <MovieContext.Provider
       value={{
-        movies,searchValue, setSearchValue,
+        movies,searchValue, setSearchValue, loading, setLoading,
         activeMovie, setActiveMovie,activeMovieCrew,activeMovieCast,activeMovieVideos,activeMovieImages,getGenres,page,maxPages,
         favorites,
         executeSearch,

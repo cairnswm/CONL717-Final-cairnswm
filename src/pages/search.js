@@ -4,6 +4,8 @@ import Page from "../components/ui/page";
 import MovieGrid from "../components/ui/moviegrid";
 import { MovieContext } from "../components/context/movieContext";
 import MovieList from "../components/ui/movielist";
+import Spinner from "../components/ui/spinner";
+import Pagination from "../components/ui/pagination"
 
 const Search = () => {
   const [gridView, setGridView] = useState(true);
@@ -16,6 +18,7 @@ const Search = () => {
     getGenres,
     page,
     maxPages,
+    loading, setLoading,
   } = useContext(MovieContext);
   return (
     <Page>
@@ -25,7 +28,7 @@ const Search = () => {
           <h2>Search for Movies</h2>
         </div>
 
-        <div className="col-1">
+        <div className="col-1 mt">
           <span
             onClick={() => {
               setGridView(true);
@@ -46,23 +49,15 @@ const Search = () => {
           </span>
         </div>
       </div>
-
+      {loading ?
+        <Spinner />
+      :
       <div className="mt">
         {movies.length > 0 ? (
           <>
             <div>
               <div className="mt">
-                <div className="pagination">
-                  <span>&laquo;</span>
-                  {[...Array(maxPages)].map((x, i) => {
-                    return (
-                      <span key={i} className={`${i + 1 === page ? "active" : null}`} onClick={()=>{executeSearch(i+1)}}>
-                        {i + 1}
-                      </span>
-                    );
-                  })}
-                  <span>&raquo;</span>
-                </div>
+                <Pagination page={page} maxPages={maxPages} onPageSelect={(page)=>{executeSearch(page)}} />
               </div>
             </div>
             {gridView ? (
@@ -87,6 +82,7 @@ const Search = () => {
           <div>No movies found</div>
         )}
       </div>
+      }
     </Page>
   );
 };
