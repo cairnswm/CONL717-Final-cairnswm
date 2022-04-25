@@ -35,22 +35,3 @@ function App() {
 }
 
 export default App;
-
-function Home() {
-  const params = useParams();
-
-  return (<div className="row">
-    <h1>About</h1><div>About ID: {params.id}</div>
-  <div className="col-1 col-s-0">
-    <div className="mt2">
-      Col 1;
-    </div>
-  </div>
-  <div className="col-3 col-s-4">
-    
-    <button className="btn btn-info m">Btn Info</button>
-    <button className="btn btn-primary m">Btn primary</button>
-
-  </div>
-</div>)
-}
