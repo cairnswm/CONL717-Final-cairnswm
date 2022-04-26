@@ -11,7 +11,7 @@ const SearchBar = ({ className, onSearch }) => {
   };
 
   return (
-    <div style={{ margin: "20px" }}>
+    <div style={{ margin: "20px", zIndex:"100" }}>
       <div className={`search_wrapper ${className}`}>
         <input
           className="input search_field"
