@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import SearchBar from "../components/ui/searchbar";
-import Page from "../components/ui/page";
+import {Page} from "../components/ui/page";
 import MovieGrid from "../components/ui/moviegrid";
 import { MovieContext } from "../components/context/movieContext";
 import MovieList from "../components/ui/movielist";

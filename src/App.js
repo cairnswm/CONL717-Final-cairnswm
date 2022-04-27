@@ -16,14 +16,15 @@ function App() {
       <Router>
         <Router.Menu>
 
-          <Router.To href="favorites" params="id=5">Favorites</Router.To>
-          <Router.To href="search" params="id=1">Search</Router.To>
-          <Router.To href="about" params="id=15">About</Router.To>
+          <Router.To href="favorites">Favorites</Router.To>
+          <Router.To href="search">Search</Router.To>
+          <Router.To href="about">About</Router.To>
         </Router.Menu>
 
       <div className="content">
           <Router.Page hash="favorites"><Favorites /></Router.Page>
           <Router.Page hash="search"><Search /></Router.Page>
+          <Router.Page hash="home"><Search /></Router.Page>
           <Router.Page hash="about"><About /></Router.Page>      
           <MovieDetail />
       </div>

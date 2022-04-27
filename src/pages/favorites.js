@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import Page from "../components/ui/page";
+import {Page, Row, Col} from "../components/ui/page";
 import MovieGrid from "../components/ui/moviegrid";
 import { MovieContext } from "../components/context/movieContext";
 import MovieList from "../components/ui/movielist";
@@ -9,12 +9,12 @@ const Favorites = () => {
   const { favorites,  addToFavorites, removeFromFavorites, setActiveMovie, getGenres } = useContext(MovieContext);
   return (
     <Page>
-      <div className="row mt2">
-        <div className="col-3">
+      <Row className="mt2">
+        <div className="col-3 col-s-4">
           <h2>Favorites</h2>
         </div>
 
-        <div className="col-1 mt">
+        <div className="col-1 col-s-4 mt">
           <span
             onClick={() => {
               setGridView(true);
@@ -34,7 +34,7 @@ const Favorites = () => {
             />
           </span>
         </div>
-      </div>
+      </Row>
       {favorites.length > 0 ? <>
       {gridView ? (
         <MovieGrid movies={favorites}  addFavorite={addToFavorites} removeFromFavorites={removeFromFavorites} setActiveMovie={setActiveMovie} genres={getGenres} />

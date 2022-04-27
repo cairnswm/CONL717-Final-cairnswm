@@ -1,6 +1,9 @@
+
+import {Page} from "../components/ui/page";
+
 const About = () => {
   return (
-    <div>
+    <Page>
       <div className="row mb2">
         <div className="col">
           <img src={"logo192.png"} alt="logo" />
@@ -97,7 +100,7 @@ const About = () => {
           </ol>
         </div>
       </div>
-    </div>
+    </Page>
   );
 };
 

@@ -23,7 +23,7 @@ const Menu = ({children}) => {
 
 const To = ({ href, params, children }) => {
     const { page } = useContext(RouterContext);
-    return <a href={`#${href}?${params}`} className={page === href || page === "#" + href ? "active" : null}>{children}</a>
+    return <a href={`#${href}${params ? "?"+params : ""}`} className={page === href || page === "#" + href ? "active" : null}>{children}</a>
 }
 
 Router.Page = Page;

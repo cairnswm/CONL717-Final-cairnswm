@@ -1,13 +1,25 @@
 import MovieCard from "./moviecard";
 
-const MovieGrid = ({ movies, addFavorite, removeFromFavorites, setActiveMovie, genres }) => {
+const MovieGrid = ({
+  movies,
+  addFavorite,
+  removeFromFavorites,
+  setActiveMovie,
+  genres,
+}) => {
   return (
     <div className="container">
       <div className="row">
         {movies.map((movie, idx) => {
           return (
-            <div key={idx} className="col-1">
-              <MovieCard movie={movie} addFavorite={addFavorite} removeFromFavorites={removeFromFavorites} setActiveMovie={setActiveMovie} genres={genres(movie.genre_ids)} />
+            <div key={idx} className="col-1 col-s-4 col-m-2">
+              <MovieCard
+                movie={movie}
+                addFavorite={addFavorite}
+                removeFromFavorites={removeFromFavorites}
+                setActiveMovie={setActiveMovie}
+                genres={genres(movie.genre_ids)}
+              />
             </div>
           );
         })}

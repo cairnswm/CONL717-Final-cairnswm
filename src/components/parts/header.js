@@ -1,5 +1,3 @@
-
-
 const Header = ({children}) => {
     return (
       <>

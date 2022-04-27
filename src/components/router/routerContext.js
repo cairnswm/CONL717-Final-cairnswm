@@ -23,6 +23,9 @@ export const RouterProvider = ({ children }) => {
             setParams(p);
             hash = hash.split("?")[0];
         }
+        if (p.page==="") {
+            p.page = "home"
+        }
         if (p.page) {
             if (p.page === "refer") {
                 p.page = "register";
@@ -39,15 +42,19 @@ export const RouterProvider = ({ children }) => {
             });
             window.location.href = "/#" + p.page + "?" + prm;
         }
+        if (hash === "") {
+            hash = "#home";
+        }
+        console.log("HASH",hash)
         setPage(hash);
     };
 
     useEffect(() => {
         loadPage();
-        window.onpopstate = function (event) {
+        window.onpopstate = function () {
             loadPage();
         };
-        window.addEventListener("popstate", function (event) {
+        window.addEventListener("popstate", function () {
             loadPage();
         });
 
@@ -55,10 +62,6 @@ export const RouterProvider = ({ children }) => {
             loadPage();
         });
     }, []);
-
-    useEffect(() => {
-        //console.log("PAGE",page)
-    }, [page]);
 
 	return (
 		<RouterContext.Provider

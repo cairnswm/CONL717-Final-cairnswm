@@ -1,4 +1,4 @@
-import Stars from "./stars"
+import Stars from "./stars";
 
 const MovieRow = ({
   movie,
@@ -11,7 +11,7 @@ const MovieRow = ({
     <div
       className="row over"
       style={{ borderBottom: "1px solid black", margin: "5px" }}
-      onClick={(ev) => {
+      onClick={() => {
         setActiveMovie(movie);
       }}
     >
