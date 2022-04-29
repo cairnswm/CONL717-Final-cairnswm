@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import {Page, Row, Col} from "../components/ui/page";
+import {Page, Row} from "../components/ui/page";
 import MovieGrid from "../components/ui/moviegrid";
 import { MovieContext } from "../components/context/movieContext";
 import MovieList from "../components/ui/movielist";
