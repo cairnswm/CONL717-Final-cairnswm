@@ -4,7 +4,7 @@ import Header from "./components/parts/header"
 import Router from "./components/router/router";
 import About from "./pages/about"
 import Favorites from "./pages/favorites";
-import MovieDetail from "./pages/moviedetails";
+import MovieDetail from "./pages/details/moviedetails";
 
 function App() {
   return (
